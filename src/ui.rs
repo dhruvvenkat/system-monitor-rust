@@ -25,7 +25,7 @@ pub fn render(
             Constraint::Length(4),
             Constraint::Length(4),
             Constraint::Min(7),
-            Constraint::Length(2),
+            Constraint::Length(3),
         ])
         .split(frame.area());
 
@@ -197,7 +197,7 @@ fn process_table(rows: &[&ProcessEntry]) -> Table<'static> {
 
 fn help_block() -> Paragraph<'static> {
     Paragraph::new(
-        "q/Esc quit | r refresh | s next sort field | a/d toggle direction | Ctrl-C quit",
+        "q/Esc - quit | r - refresh | s - next sort field | a/d - toggle direction (ascending or descending)",
     )
     .style(Style::default().fg(Color::Gray))
     .block(Block::default().borders(Borders::ALL).title("Controls"))
