@@ -1,6 +1,8 @@
+use serde::{Deserialize, Serialize};
+
 use crate::model::{ProcessEntry, SortField, SystemSnapshot};
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Query {
     pub sort_by: SortField,
     pub descending: bool,

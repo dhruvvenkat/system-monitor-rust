@@ -1,6 +1,7 @@
 pub mod app;
 pub mod cli;
 pub mod model;
+pub mod monitor;
 pub mod processes;
 pub mod query;
 pub mod ui;

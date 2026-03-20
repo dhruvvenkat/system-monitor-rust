@@ -1,0 +1,23 @@
+{
+  "productName": "system-monitor",
+  "version": "0.1.0",
+  "identifier": "com.system-monitor.app",
+  "build": {
+    "frontendDist": "../web"
+  },
+  "bundle": {
+    "icon": ["icons/icon.png"]
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "system-monitor",
+        "width": 1280,
+        "height": 860,
+        "resizable": true
+      }
+    ]
+  }
+}

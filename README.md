@@ -19,6 +19,18 @@ cargo run -- --once
 cargo run -- --json
 ```
 
+## Tauri web UI
+
+The CLI remains the default interface. The Tauri path is an alternative desktop/webview shell over the same Rust monitoring core.
+
+Run the web UI:
+
+```bash
+cargo run --manifest-path src-tauri/Cargo.toml
+```
+
+The Tauri window uses the static assets in [`web/`](./web) and calls into Rust commands for live snapshots, sorting, filtering, and limiting.
+
 ## Controls
 
 The terminal UI keeps the initial control set small:

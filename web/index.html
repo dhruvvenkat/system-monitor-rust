@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>system-monitor</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Tauri web UI</p>
+          <h1>system-monitor</h1>
+          <p class="lede">
+            Live system data from the same Rust core that powers the CLI.
+          </p>
+        </div>
+        <button id="refresh-btn" class="button button-primary" type="button">
+          Refresh
+        </button>
+      </header>
+
+      <section class="toolbar panel">
+        <label>
+          <span>Sort</span>
+          <select id="sort-field">
+            <option value="Cpu">CPU</option>
+            <option value="Memory">Memory</option>
+            <option value="Pid">PID</option>
+            <option value="Name">Name</option>
+          </select>
+        </label>
+        <label>
+          <span>Direction</span>
+          <button id="direction-btn" class="button" type="button">Descending</button>
+        </label>
+        <label class="grow">
+          <span>Filter</span>
+          <input id="filter-input" type="text" placeholder="Search command, name, pid..." />
+        </label>
+        <label>
+          <span>Limit</span>
+          <input id="limit-input" type="number" min="1" max="500" value="25" />
+        </label>
+      </section>
+
+      <section class="summary-grid" id="summary-grid"></section>
+
+      <section class="panel table-panel">
+        <div class="panel-head">
+          <h2>Processes</h2>
+          <p id="status-line">Loading snapshot…</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>PID</th>
+                <th>Name</th>
+                <th>CPU</th>
+                <th>Memory</th>
+                <th>Status</th>
+                <th>Command</th>
+              </tr>
+            </thead>
+            <tbody id="process-table"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
