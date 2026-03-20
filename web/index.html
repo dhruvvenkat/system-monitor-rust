@@ -24,6 +24,37 @@
         </button>
       </header>
 
+      <section class="panel graph-panel">
+        <div class="graph-head">
+          <label class="graph-picker">
+            <span>Graph metric</span>
+            <select id="graph-metric">
+              <option value="cpu">CPU usage</option>
+              <option value="memory">Memory usage</option>
+              <option value="swap">Swap usage</option>
+              <option value="processes">Process count</option>
+            </select>
+          </label>
+          <div class="graph-meta">
+            <p id="graph-label">CPU usage</p>
+            <div class="graph-meta-values">
+              <strong id="graph-current-value">--</strong>
+              <span id="graph-scale-label">0-100% scale</span>
+            </div>
+          </div>
+        </div>
+        <div class="graph-stage">
+          <svg
+            id="usage-graph"
+            class="usage-graph"
+            viewBox="0 0 960 260"
+            preserveAspectRatio="none"
+            aria-label="System usage history graph"
+          ></svg>
+          <div id="graph-empty" class="graph-empty">Collecting samples...</div>
+        </div>
+      </section>
+
       <section class="toolbar panel">
         <label>
           <span>Sort</span>
